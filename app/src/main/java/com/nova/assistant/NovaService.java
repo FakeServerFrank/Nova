@@ -212,7 +212,8 @@ public class NovaService extends Service {
     private void run(String cmd) {
         active = false;
         main.removeCallbacks(timeout);
-        say(answer(cmd));
+                String r = Actions.handle(this, cmd);
+        say(r != null ? r : answer(cmd));
     }
 
     private void say(String text) {
@@ -368,4 +369,5 @@ public class NovaService extends Service {
         if (l != null) l.onEvent("off", "");
         super.onDestroy();
     }
-}
+            }
+                                                        

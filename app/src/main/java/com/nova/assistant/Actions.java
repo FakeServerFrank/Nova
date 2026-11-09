@@ -45,7 +45,7 @@ final class Actions {
     private static boolean start(Context c, Intent i) {
         try {
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            c.startActivity(i);
+            Opener.go(c, i);
             return true;
         } catch (Exception e) {
             return false;
@@ -235,4 +235,5 @@ final class Actions {
         }
         return null;
     }
-}
+            }
+                                                        
